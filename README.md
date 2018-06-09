@@ -5,10 +5,11 @@ Some examples of how to use the [Media conversion Gradle plugin](https://github.
 ## Running the examples
 
 * Install `inkscape`
+* Clone this repository
 * Copy `gradle.template.properties` to `gradle.properties`
 * Correct values in `gradle.properties`
 * Run `./gradlew build`
-* check submodule build folders for generated outputs
+* Check submodule build folders for generated outputs
 
 Have problems? [Register an issue](https://github.com/squins/media-conversion-gradle-plugin-examples/issues) or [submit a pull request](https://github.com/squins/media-conversion-gradle-plugin-examples/pulls)
 
