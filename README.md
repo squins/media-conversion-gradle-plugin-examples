@@ -10,8 +10,7 @@ Some examples of how to use the [Media conversion Gradle plugin](https://github.
 * Run `./gradlew build`
 * check submodule build folders for generated outputs
 
-
-Have problems? [Register an issue](issues) or [submit a pull request](pulls)
+Have problems? [Register an issue](https://github.com/squins/media-conversion-gradle-plugin-examples/issues) or [submit a pull request](https://github.com/squins/media-conversion-gradle-plugin-examples/pulls)
 
 ## app-icon example
 Generates Android and iOS icons. 
