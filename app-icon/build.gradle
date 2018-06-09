@@ -1,0 +1,52 @@
+import java.text.DecimalFormat
+
+apply plugin: 'com.squins.media.conversion'
+apply plugin: 'java'
+
+ext {
+    def twoDecimalsFormat = DecimalFormat.getInstance()
+    twoDecimalsFormat.applyPattern("0.00")
+    svgRasterizingDpi = twoDecimalsFormat.format(Integer.parseInt(inkscapeDpi) * 978.0 / 1024.0)
+}
+
+media {
+    converters {
+        svg {
+            commandLine project.inkscapePath, inputFilePath(), '-d', svgRasterizingDpi, '-e', outputFilePath('png')
+            variants {
+                variantsSpecifiedByFile {
+                    optionalVariantProperties 'backgroundOpacity', 'backgroundColor'
+                    commandLine project.inkscapePath, inputFilePath(), '-y', variantProperty('backgroundOpacity'), '-b', variantProperty('backgroundColor'), '-w', variantProperty('width'), '-h', variantProperty('height'), '-e', outputFilePath('png')
+                }
+            }
+        }
+        json {
+            // empty placeholder to copy Contents.json files
+        }
+        txt {
+
+        }
+    }
+
+    rootFolders {
+        'src/main/svg' {
+        }
+    }
+}
+
+ext {
+    jarContentsDir = new File(buildDir, 'generated/resources').path
+}
+
+sourceSets {
+    main {
+        resources.srcDirs jarContentsDir
+    }
+}
+
+task copyGeneratedResourcesToJar(type: Copy) {
+    from(convert_src_main_svg)
+    into jarContentsDir
+}
+
+processResources.dependsOn copyGeneratedResourcesToJar
