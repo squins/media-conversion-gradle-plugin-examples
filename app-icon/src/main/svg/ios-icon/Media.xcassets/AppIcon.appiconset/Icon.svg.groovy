@@ -76,25 +76,5 @@
                 height: 1024,
                 backgroundOpacity: 255,
                 backgroundColor: '#FFFFFF'
-        ],
-        'ios-wavemaker-icon-50x50.svg'         : [
-                width : 50,
-                height: 50
-        ],
-        'ios-wavemaker-icon-72x72.svg'         : [
-                width : 72,
-                height: 72
-        ],
-        'ios-wavemaker-icon-100x100.svg'         : [
-                width : 100,
-                height: 100
-        ],
-        'ios-wavemaker-icon-114x114.svg'         : [
-                width : 114,
-                height: 114
-        ],
-        'ios-wavemaker-icon-144x144.svg'         : [
-                width : 144,
-                height: 144
         ]
 ]
